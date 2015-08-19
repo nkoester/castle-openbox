@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+    <menu id="root-menu" label="Openbox 3">
+
+    <item label="terminal">
+        <action name="Execute"><execute>gnome-terminal</execute></action>
+    </item>
+
+    <item label="other">
+        <action name="Execute"><execute>kupfer</execute></action>
+    </item>
+
+
+    <separator />
+    <item label="screenshot">
+        <action name="Execute">
+            <execute>
+                xfce4-screenshooter
+            </execute>
+        </action>
+    </item>
+
+    <item label="screenshot in 3s">
+        <action name="Execute">
+            <execute>
+                scrot -d 3 '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
+            </execute>
+        </action>
+    </item>
+
+
+    <separator />
+
+    <item label="obx reconfigure">
+        <action name="Execute"><execute>openbox --reconfigure</execute></action>
+    </item>
+    <item label="obconf">
+      <action name="Execute"><execute>obconf</execute></action>
+    </item>
+
+
+
+
+    <separator />
+
+        <item label="Lock Screen">
+            <action name="Execute">
+                <execute>
+                    cb-lock
+                </execute>
+            </action>
+        </item>
+        <item label="Exit">
+            <action name="Execute">
+                <execute>
+                    openbox --exit
+                </execute>
+            </action>
+        </item>
+    </menu>
+</openbox_menu>
