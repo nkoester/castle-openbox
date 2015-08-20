@@ -236,7 +236,7 @@
     <!-- start chromium -->
     <keybind key="W-h">
       <action name="Execute">
-        <command>/homes/nkoester/bin/start_chromium.sh</command>
+        <command>/home/nkoester/bin/start_chromium.sh</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>chromium-browser</name>
@@ -256,13 +256,13 @@
     <!-- get a password form passmenu -->
     <keybind key="W-p">
       <action name="Execute">
-        <command>/homes/nkoester/bin/opt/pass/usr/bin/passmenu -t -l 10 -nb black -nf white -sb black -sf orange -b</command>
+        <command>/home/nkoester/bin/opt/pass/usr/bin/passmenu -t -l 10 -nb black -nf white -sb black -sf orange -b</command>
       </action>
     </keybind>
     <!-- start keepass -->
     <keybind key="W-k">
       <action name="Execute">
-        <command>/homes/nkoester/bin/opt/keepass/bin/keepassx</command>
+        <command>/home/nkoester/bin/opt/keepass/bin/keepassx</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>keepassx</name>
@@ -272,9 +272,9 @@
     <!-- start terminal -->
     <keybind key="C-A-t">
       <action name="Execute">
-        <!--<command>/homes/nkoester/bin/start_gnome_terminal.sh</command>-->
+        <!--<command>/home/nkoester/bin/start_gnome_terminal.sh</command>-->
         <!-- <command>termite</command>-->
-        <command>/homes/nkoester/bin/opt/termite/bin/termite</command>
+        <command>/home/nkoester/bin/termite</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>termite</name>
@@ -294,17 +294,17 @@
     <!-- screen setup hotkeys -->
     <keybind key="W-F1">
       <action name="Execute">
-        <command>/homes/nkoester/bin/xrandr_single_normal.sh</command>
+        <command>/home/nkoester/bin/xrandr_single_normal.sh</command>
       </action>
     </keybind>
     <keybind key="W-F2">
       <action name="Execute">
-        <command>/homes/nkoester/bin/xrandr_dual_normal_normal.sh</command>
+        <command>/home/nkoester/bin/xrandr_dual_normal_normal.sh</command>
       </action>
     </keybind>
     <keybind key="W-F3">
       <action name="Execute">
-        <command>/homes/nkoester/bin/xrandr_dual_r_left_normal.sh</command>
+        <command>/home/nkoester/bin/xrandr_dual_r_left_normal.sh</command>
       </action>
     </keybind>
     <keybind key="A-F4">
@@ -401,7 +401,7 @@
     <!-- toggle keyboard layout between de and en -->
     <keybind key="C-W-A-space">
       <action name="Execute">
-        <command>/homes/nkoester/bin/toggle_keyboardlayout.sh</command>
+        <command>/home/nkoester/bin/toggle_keyboardlayout.sh</command>
         <startupnotify>
           <enabled>true</enabled>
           <name>English_German_keyboad_layout</name>
@@ -901,7 +901,7 @@
   <menu>
     <!-- You can specify more than one menu file in here and they are all loaded, 
             just don't make menu ids clash or, well, it'll be kind of pointless -->
-    <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
+    <!-- default menu file (or custom one in /home/nkoester/.config/openbox/) -->
     <!-- system menu files on Debian systems -->
     <file>menu.xml</file>
     <file>/var/lib/openbox/debian-menu.xml</file>
