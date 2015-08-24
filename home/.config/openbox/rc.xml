@@ -259,13 +259,13 @@
         <command>/home/nkoester/bin/opt/pass/usr/bin/passmenu -t -l 10 -nb black -nf white -sb black -sf orange -b</command>
       </action>
     </keybind>
-    <!-- start keepass -->
-    <keybind key="W-k">
+    <!-- start application launcher -->
+    <keybind key="W-space">
       <action name="Execute">
-        <command>/home/nkoester/bin/opt/keepass/bin/keepassx</command>
+        <command>/usr/bin/dmenu_run -i -b -p "run >> " -fn "Ubuntu Mono:bold:pixelsize=11" -nb "#000000" -nf "#586c75" -sf "#fdf6e3" -sb "#b58900"</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>keepassx</name>
+          <name>dmenu_run</name>
         </startupnotify>
       </action>
     </keybind>
