@@ -3,9 +3,7 @@
 echo "Starting ..."
 
 # just in case ...
-#killall conky tint2 netwmpager
 killall conky tint2
-
 
 screen_number=`xrandr -q | grep -e " connected" | wc -l`
 screen_setup=`xrandr -q | grep -e " connected" | grep -e "[0-9]\+x[0-9]\++[0-9]\++[0-9]\+"`
@@ -13,6 +11,7 @@ screen_setup=`xrandr -q | grep -e " connected" | grep -e "[0-9]\+x[0-9]\++[0-9]\
 # TODO: check if field 4 is correct
 screen_xy_positions=`echo "$screen_setup" |  cut -d ' ' -f 4 | cut -d '+' -f 2-3 | sed -e 's/+/ /' | awk '{printf "%sx%s ", $1, $2}'`
 
+echo "Starting conky2 ..."
 echo "screen_xy_positions: $screen_xy_positions"
 
 counter=0
@@ -28,8 +27,13 @@ do
     (conky -c $HOME/.config/openbox/.conkyrc -x $x_val_conky -y $y_val_conky) &
 done
 
-echo "Setting background..."
-
+echo "Starting tint2 ..."
 (sleep 1 && /usr/bin/tint2 -c $HOME/.config/openbox/tint2.conf) &
+
+# Start orage once for the icon
+(sleep 1 && orage) &
+
+# Start volume iconic
+(sleep 1 && /usr/bin/volumeicon) &
 
 echo "All done"

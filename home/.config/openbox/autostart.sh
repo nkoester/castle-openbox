@@ -16,14 +16,21 @@ else
     (sleep 1 && $HOME/bin/xrandr_single_normal.sh) &
 fi
 
+# Ubuntu related settings
+#
+# openbox related - REVERS IF RUNNING GNOME!
+# Disable Nautilus desktop.
+gconftool-2 -s -t bool /apps/nautilus/preferences/show_desktop false &
+# Do not let Nautilus set the background image.
+gconftool-2 -s -t bool /desktop/gnome/background/draw_background false &
+# candy
+# Make Nautilus use spatial mode, should start-up quicker.
+gconftool-2 -s -t bool /apps/nautilus/preferences/always_use_browser false &
+# Make Nautilus show the advanced permissions dialog 
+gconftool-2 -s -t bool /apps/nautilus/preferences/show_advanced_permissions true &
+
 # start conky + tint2
 (sleep 1 && exec $HOME/.config/openbox/start_conky_and_tint2.sh) &
-
-# Start orage once for the icon
-(sleep 1 && orage) &
-
-#start volume iconic
-(sleep 1 && /usr/bin/volumeicon) &
 
 # Some special X settings
 (sleep 1 && xrdb $HOME/.config/openbox/.Xresources) &
@@ -33,21 +40,6 @@ fi
 
 (sleep 1 && nitrogen --restore) &
 
-# openbox related - REVERS IF RUNNING GNOME!
-# Disable Nautilus desktop.
-gconftool-2 -s -t bool /apps/nautilus/preferences/show_desktop false &
-# Do not let Nautilus set the background image.
-gconftool-2 -s -t bool /desktop/gnome/background/draw_background false &
-
-# candy
-# Make Nautilus use spatial mode, should start-up quicker.
-gconftool-2 -s -t bool /apps/nautilus/preferences/always_use_browser false &
-# Make Nautilus show the advanced permissions dialog 
-gconftool-2 -s -t bool /apps/nautilus/preferences/show_advanced_permissions true &
-
 # screen leyout setup &
 (sleep 1 && $HOME/bin/setlayout 0 3 3 0) &
-
-# active corners
-#(sleep 1 && $HOME/bin/opensnap -d) &
 
