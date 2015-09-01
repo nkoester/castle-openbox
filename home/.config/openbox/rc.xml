@@ -304,7 +304,7 @@
     </keybind>
     <keybind key="W-F3">
       <action name="Execute">
-        <command>/home/nkoester/bin/xrandr_dual_r_left_normal.sh</command>
+        <command>xrandr_autodetect_openbox.sh</command>
       </action>
     </keybind>
     <keybind key="A-F4">
